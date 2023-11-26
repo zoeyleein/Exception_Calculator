@@ -18,11 +18,18 @@ import java.util.Scanner;
 public class CalculatorInput {
 
     private CalculatorEngine engine;
-
+    
+    /**
+     * constractor
+     * @param engine
+     */
     public CalculatorInput(CalculatorEngine engine) {
         this.engine = engine;
     }
-
+    
+    /**
+     * a method for exception
+     */
     public void start() {
         Scanner sc = new Scanner(System.in);
         String buffer;
@@ -71,7 +78,8 @@ public class CalculatorInput {
                 if (!equals.equals("=")) {
                     throw new EquationException("Equation incomplete. Equation must end with =");
                 }
-
+                
+                // calculate
                 int result = engine.calculate(num1, num2, sign);
                 System.out.println("\nThat answer is: " + result);
 
